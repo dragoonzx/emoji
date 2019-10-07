@@ -21,13 +21,13 @@ var httpsServer = https.createServer(credentials, app);
 
 app.use(redirectToHTTPS([/historymaxtest.ru:(\d{4})/], [/\/insecure/], 301));
 
-app.use(express.static(__dirname + "/build"));
+app.use(express.static(__dirname + "/public"));
 
 app.use(cors());
 
 // serve the homepage
 app.get("/", (req, res) => {
-	res.sendFile(__dirname + "/build/index.html");
+	res.sendFile(__dirname + "/public/index.html");
 });
 
 httpsServer.listen(443, () => console.log("server is listening safely"));
