@@ -21,7 +21,7 @@ var httpsServer = https.createServer(credentials, app);
 
 app.use(redirectToHTTPS([/historymaxtest.ru:(\d{4})/], [/\/insecure/], 301));
 
-app.use(express.static(__dirname + "/frontend/build"));
+app.use(express.static(__dirname + "/build"));
 
 app.use(cors());
 
